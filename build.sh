@@ -21,6 +21,7 @@ ssh-keyscan -H github.com >> ~/.ssh/known_hosts 2> /dev/null
 # reverses the Base64 encoding to transform it back into a file
 echo "$SSH_KEY" | base64 -d > ~/.ssh/id_ecdsa
 chmod 600 ~/.ssh/id_ecdsa
+echo "SSH key copied to: $(realpath ~/.ssh/id_ecdsa)"
 
 # This next piece sets up your SSH configuration for all
 # hosts. More info about these commands is available on the web.
