@@ -15,7 +15,6 @@ export const cloneRepo = async (url: string, requestId: string) => {
         // Set up SSH configuration for git clone
         const sshKnownHosts = path.resolve(`${os.homedir()}/.ssh/known_hosts`);
         const sshKey = path.resolve(`${os.homedir()}/.ssh/id_ecdsa`);
-        console.log("ls: ", await $`ls -l ${os.homedir()}/.ssh`.text());
         
         const GIT_SSH_COMMAND = `ssh -o UserKnownHostsFile=${sshKnownHosts} -o StrictHostKeyChecking=no -i ${sshKey}`;
 

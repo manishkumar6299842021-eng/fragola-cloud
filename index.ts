@@ -6,6 +6,7 @@ import { cloneRepoTool } from "./tools/cloneRepo/cloneRepo.tool";
 import { readFileById } from "./tools/readFileById/readFileById.tool";
 import { authtoken } from "ngrok";
 import { grepCodebaseTool } from "./tools/grepCodebase/grepCodebase.tool";
+import { $ } from "bun";
 
 // Load environment variables
 dotenv.config();
@@ -45,4 +46,11 @@ app.listen(PORT, async () => {
   //   //TODO: handle prod log
   // }
   fragolaCloud.logExposedTools();
+  try {
+    console.log("__doing ls");
+    const response = await $`ls /opt/render/.ssh`.text();
+    console.log("__ls: ", response);
+  } catch(e) {
+    console.error("ls failed", e);
+  }
 });
