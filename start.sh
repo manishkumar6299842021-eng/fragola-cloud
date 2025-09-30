@@ -32,4 +32,4 @@ Host *
    LogLevel ERROR
 EOF
 
-bun i
+bun index.ts

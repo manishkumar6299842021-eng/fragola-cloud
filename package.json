@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "/usr/bin/env bash build.sh",
-    "start": "bun index.ts",
+    "build": "bun i",
+    "start": "/usr/bin/env bash start.sh",
     "dev": "bun index.ts",
     "clean": "rm -f *.js *.js.map"
   },
