@@ -7,6 +7,8 @@ import { readFileById } from "./tools/readFileById/readFileById.tool";
 import { authtoken } from "ngrok";
 import { grepCodebaseTool } from "./tools/grepCodebase/grepCodebase.tool";
 import { $ } from "bun";
+import fs from "fs";
+import path from "path";
 
 // Load environment variables
 dotenv.config();
@@ -29,6 +31,57 @@ fragolaCloud.exposeTool(asCloudTool(cloneRepoTool));
 fragolaCloud.exposeTool(asCloudTool(readFileById));
 fragolaCloud.exposeTool(asCloudTool(grepCodebaseTool));
 
+// Cleanup function for old temporary folders
+const cleanupOldTmpFolders = () => {
+  const tmpDir = './tmp';
+  const cleanTimeMinutes = parseInt(process.env.TMP_CLEAN_AFTER || '30');
+  
+  console.log(`Looking for old tmp folders older than ${cleanTimeMinutes} minutes...`);
+  
+  // Check if tmp directory exists
+  if (!fs.existsSync(tmpDir)) {
+    console.log('No ./tmp directory found, skipping cleanup');
+    return;
+  }
+  
+  try {
+    const now = Date.now();
+    const cutoffTime = now - (cleanTimeMinutes * 60 * 1000); // Convert minutes to milliseconds
+    
+    const folders = fs.readdirSync(tmpDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name);
+    
+    let deletedCount = 0;
+    
+    for (const folder of folders) {
+      const folderPath = path.join(tmpDir, folder);
+      const stats = fs.statSync(folderPath);
+      
+      if (stats.birthtimeMs < cutoffTime) {
+        try {
+          fs.rmSync(folderPath, { recursive: true, force: true });
+          console.log(`Deleted old tmp folder: ${folderPath}`);
+          deletedCount++;
+        } catch (error) {
+          console.error(`Failed to delete folder ${folderPath}:`, error);
+        }
+      }
+    }
+    
+    if (deletedCount === 0) {
+      console.log('No old tmp folders found to delete');
+    } else {
+      console.log(`Cleanup completed: deleted ${deletedCount} folder(s)`);
+    }
+  } catch (error) {
+    console.error('Error during tmp cleanup:', error);
+  }
+};
+
+// Start cleanup interval (every 10 seconds)
+setInterval(cleanupOldTmpFolders, 10000);
+
 // Lancer le serveur
 app.listen(PORT, async () => {
     console.log(`Fragola cloud started on http://localhost:${PORT}`);
@@ -46,11 +99,4 @@ app.listen(PORT, async () => {
   //   //TODO: handle prod log
   // }
   fragolaCloud.logExposedTools();
-  try {
-    console.log("__doing ls");
-    const response = await $`ls /opt/render/.ssh`.text();
-    console.log("__ls: ", response);
-  } catch(e) {
-    console.error("ls failed", e);
-  }
 });
