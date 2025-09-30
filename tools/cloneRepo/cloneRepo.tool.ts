@@ -1,4 +1,4 @@
-import { tool } from "@fragola-ai/agentic";
+import { tool } from "../types";
 import z from "zod";
 import { toolFailure, toolSuccess } from "../../fragolaCloud/FragolaCloud";
 import { nanoid } from "nanoid";

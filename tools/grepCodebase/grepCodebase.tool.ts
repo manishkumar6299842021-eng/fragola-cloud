@@ -1,4 +1,4 @@
-import { tool } from "@fragola-ai/agentic";
+import { tool } from "../types";
 import { z } from "zod";
 import { toolFailure } from "../../fragolaCloud";
 import { grepCodebaseInternal } from "./grepCodebaseInternal";

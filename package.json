@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "start": "rm -rf index.js; node index.js",
+    "start": "bun index.ts",
     "dev": "bun index.ts",
     "clean": "rm -f *.js *.js.map"
   },
@@ -20,7 +20,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@fragola-ai/agentic": "^0.1.0",
     "directory-tree": "^3.5.2",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",

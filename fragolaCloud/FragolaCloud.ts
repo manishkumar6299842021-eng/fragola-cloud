@@ -1,8 +1,8 @@
 import express from "express";
-import { Tool, ToolHandlerReturnType, ToolHandlerReturnTypeNonAsync } from "@fragola-ai/agentic";
+import { Tool, ToolHandlerReturnTypeNonAsync } from "@fragola-ai/agentic";
 import { toSnakeCase } from "../utils/stringUtils";
 import type { Request, Response, NextFunction } from "express";
-import z, { ZodError, ZodType } from "zod";
+import z, { ZodError } from "zod";
 import { StatusCode } from 'status-code-enum'
 import { AgentContext } from "@fragola-ai/agentic/agent";
 import { FragolaCloudError } from "./exceptions";
