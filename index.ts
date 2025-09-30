@@ -48,6 +48,9 @@ const cleanupOldTmpFolders = () => {
     const now = Date.now();
     const cutoffTime = now - (cleanTimeMinutes * 60 * 1000); // Convert minutes to milliseconds
     
+    console.log(`Current time: ${new Date(now).toISOString()}`);
+    console.log(`Cutoff time: ${new Date(cutoffTime).toISOString()}`);
+    
     const folders = fs.readdirSync(tmpDir, { withFileTypes: true })
       .filter(dirent => dirent.isDirectory())
       .map(dirent => dirent.name);
@@ -58,14 +61,22 @@ const cleanupOldTmpFolders = () => {
       const folderPath = path.join(tmpDir, folder);
       const stats = fs.statSync(folderPath);
       
-      if (stats.birthtimeMs < cutoffTime) {
+      // Use modification time (mtimeMs) which is more reliable than birth time
+      const folderTime = Math.max(stats.mtimeMs, stats.ctimeMs);
+      const ageMinutes = (now - folderTime) / (60 * 1000);
+      
+      console.log(`Folder: ${folder}, Age: ${ageMinutes.toFixed(2)} minutes, Created: ${new Date(folderTime).toISOString()}`);
+      
+      if (folderTime < cutoffTime) {
         try {
           fs.rmSync(folderPath, { recursive: true, force: true });
-          console.log(`Deleted old tmp folder: ${folderPath}`);
+          console.log(`Deleted old tmp folder: ${folderPath} (${ageMinutes.toFixed(2)} minutes old)`);
           deletedCount++;
         } catch (error) {
           console.error(`Failed to delete folder ${folderPath}:`, error);
         }
+      } else {
+        console.log(`Keeping folder: ${folder} (only ${ageMinutes.toFixed(2)} minutes old)`);
       }
     }
     
