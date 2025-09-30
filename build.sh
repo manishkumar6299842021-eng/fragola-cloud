@@ -31,4 +31,4 @@ Host *
    LogLevel ERROR
 EOF
 
-tsc
+bun i
