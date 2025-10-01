@@ -1,5 +1,8 @@
+## Deployment config
+```bash
 build command: bun run build
 start command: bun run start
+```
 
 ## Required env
 ```bash
