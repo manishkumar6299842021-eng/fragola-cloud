@@ -1,15 +1,9 @@
-# server-demo
+build command: bun run build
+start command: bun run start
 
-To install dependencies:
-
+## Required env
 ```bash
-bun install
+# e.g 1 for 1 minute, 30 for 30 minutes, default value: 30
+TMP_CLEAN_AFTER=<clean tmp github repo after X minutes> #optional
+SSH_KEY=<your private ssh key for priate repository> #required
 ```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.13. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
