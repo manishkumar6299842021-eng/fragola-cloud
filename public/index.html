@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeHub - Learn. Build. Deploy.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">CodeHub</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#editor" class="nav-link">Try Editor</a>
+                    <a href="#resources" class="nav-link">Resources</a>
+                    <a href="#about" class="nav-link">About</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Code</span> Your Future
+                </h1>
+                <p class="hero-subtitle">
+                    Master programming with interactive tutorials, real-time code editor, and a vibrant community of developers.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-secondary">View Docs</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Developers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Tutorials</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Code Snippets</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to become a better developer</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">{ }</div>
+                    <h3 class="feature-title">Interactive Editor</h3>
+                    <p class="feature-description">
+                        Write, test, and debug code in real-time with our powerful online editor supporting multiple languages.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">→</div>
+                    <h3 class="feature-title">Step-by-Step Tutorials</h3>
+                    <p class="feature-description">
+                        Learn at your own pace with comprehensive tutorials covering everything from basics to advanced topics.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3 class="feature-title">Code Challenges</h3>
+                    <p class="feature-description">
+                        Sharpen your skills with daily coding challenges and compete with developers worldwide.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">◆</div>
+                    <h3 class="feature-title">Community Support</h3>
+                    <p class="feature-description">
+                        Join a thriving community of developers ready to help and share knowledge.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast Execution</h3>
+                    <p class="feature-description">
+                        Experience lightning-fast code execution with our optimized runtime environment.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">∞</div>
+                    <h3 class="feature-title">Unlimited Projects</h3>
+                    <p class="feature-description">
+                        Create and manage unlimited projects with version control and collaboration tools.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Editor Section -->
+    <section id="editor" class="editor-section">
+        <div class="container">
+            <h2 class="section-title">Try Our Editor</h2>
+            <p class="section-subtitle">Experience the power of real-time coding</p>
+            
+            <div class="editor-container">
+                <div class="editor-header">
+                    <div class="editor-tabs">
+                        <button class="editor-tab active" data-lang="javascript">JavaScript</button>
+                        <button class="editor-tab" data-lang="python">Python</button>
+                        <button class="editor-tab" data-lang="html">HTML</button>
+                    </div>
+                    <button class="btn-run" id="runBtn">Run Code</button>
+                </div>
+                
+                <div class="editor-body">
+                    <div class="line-numbers" id="lineNumbers">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                    </div>
+                    <textarea class="code-editor" id="codeEditor" spellcheck="false">// Welcome to CodeHub Editor!
+function greet(name) {
+  return `Hello, ${name}! 👋`;
+}
+
+const message = greet('Developer');
+console.log(message);
+// Try running this code!</textarea>
+                </div>
+                
+                <div class="editor-output">
+                    <div class="output-header">Output</div>
+                    <div class="output-content" id="outputContent">
+                        <div class="output-placeholder">Run your code to see the output here...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2 class="section-title">Learning Resources</h2>
+            <p class="section-subtitle">Curated content to accelerate your learning</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-tag">Beginner</div>
+                    <h3 class="resource-title">JavaScript Fundamentals</h3>
+                    <p class="resource-description">
+                        Master the basics of JavaScript including variables, functions, and control flow.
+                    </p>
+                    <div class="resource-meta">
+                        <span>12 Lessons</span>
+                        <span>•</span>
+                        <span>3 Hours</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-tag">Intermediate</div>
+                    <h3 class="resource-title">React Development</h3>
+                    <p class="resource-description">
+                        Build modern web applications with React, hooks, and component architecture.
+                    </p>
+                    <div class="resource-meta">
+                        <span>18 Lessons</span>
+                        <span>•</span>
+                        <span>6 Hours</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-tag">Advanced</div>
+                    <h3 class="resource-title">System Design</h3>
+                    <p class="resource-description">
+                        Learn to design scalable systems and ace technical interviews at top companies.
+                    </p>
+                    <div class="resource-meta">
+                        <span>24 Lessons</span>
+                        <span>•</span>
+                        <span>10 Hours</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-tag">Beginner</div>
+                    <h3 class="resource-title">Python Basics</h3>
+                    <p class="resource-description">
+                        Start your Python journey with hands-on exercises and real-world projects.
+                    </p>
+                    <div class="resource-meta">
+                        <span>15 Lessons</span>
+                        <span>•</span>
+                        <span>4 Hours</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-tag">Intermediate</div>
+                    <h3 class="resource-title">Node.js & Express</h3>
+                    <p class="resource-description">
+                        Build powerful backend APIs with Node.js, Express, and modern best practices.
+                    </p>
+                    <div class="resource-meta">
+                        <span>20 Lessons</span>
+                        <span>•</span>
+                        <span>7 Hours</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-tag">Advanced</div>
+                    <h3 class="resource-title">TypeScript Mastery</h3>
+                    <p class="resource-description">
+                        Deep dive into TypeScript's type system and advanced patterns for robust code.
+                    </p>
+                    <div class="resource-meta">
+                        <span>16 Lessons</span>
+                        <span>•</span>
+                        <span>5 Hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About CodeHub</h2>
+                <p class="about-text">
+                    CodeHub is a modern platform designed to help developers of all skill levels learn, practice, and master programming. 
+                    Our mission is to make coding education accessible, interactive, and enjoyable for everyone.
+                </p>
+                <p class="about-text">
+                    With our powerful online editor, comprehensive tutorials, and supportive community, you'll have everything 
+                    you need to transform from a beginner to a professional developer.
+                </p>
+                <div class="about-cta">
+                    <button class="btn btn-primary">Join Our Community</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">CodeHub</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p class="footer-description">
+                        Empowering developers to build the future, one line of code at a time.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Code Challenges</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
