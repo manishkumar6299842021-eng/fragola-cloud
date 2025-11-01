@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft - Modern Coding Platform</title>
+    <meta name="description" content="A beautiful, modern platform for developers to learn, code, and create amazing projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">CodeCraft</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#code">Code</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="btn-primary">Get Started</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Build the Future
+                    <span class="gradient-text">One Line at a Time</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A modern coding platform designed for developers who want to create, learn, and innovate. 
+                    Write beautiful code with powerful tools and an elegant interface.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#code" class="btn btn-primary btn-large">Start Coding</a>
+                    <a href="#features" class="btn btn-secondary btn-large">Explore Features</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Developers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to code efficiently and effectively</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">
+                        Blazing fast performance with optimized build tools and instant hot reload. 
+                        Your code runs at the speed of thought.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Beautiful UI</h3>
+                    <p class="feature-description">
+                        Carefully crafted interface with attention to every detail. 
+                        Dark mode, syntax highlighting, and customizable themes.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Secure & Private</h3>
+                    <p class="feature-description">
+                        Enterprise-grade security with end-to-end encryption. 
+                        Your code is yours, always private and protected.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Deploy Instantly</h3>
+                    <p class="feature-description">
+                        One-click deployment to production. Push your code live 
+                        in seconds with automatic scaling and CDN distribution.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 class="feature-title">Real-time Collaboration</h3>
+                    <p class="feature-description">
+                        Code together with your team in real-time. Share, review, 
+                        and collaborate seamlessly from anywhere in the world.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Rich Documentation</h3>
+                    <p class="feature-description">
+                        Comprehensive guides, tutorials, and API references. 
+                        Learn at your own pace with interactive examples.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Preview Section -->
+    <section id="code" class="code-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">See It In Action</h2>
+                <p class="section-subtitle">Experience the power of modern development</p>
+            </div>
+            <div class="code-demo">
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="window-controls">
+                            <span class="control control-close"></span>
+                            <span class="control control-minimize"></span>
+                            <span class="control control-maximize"></span>
+                        </div>
+                        <div class="window-title">app.ts</div>
+                        <div class="window-actions"></div>
+                    </div>
+                    <div class="code-window-body">
+                        <pre><code class="language-typescript"><span class="code-keyword">import</span> express <span class="code-keyword">from</span> <span class="code-string">'express'</span>;
+
+<span class="code-keyword">const</span> app = <span class="code-function">express</span>();
+<span class="code-keyword">const</span> PORT = <span class="code-number">3000</span>;
+
+<span class="code-comment">// Create a beautiful API endpoint</span>
+app.<span class="code-function">get</span>(<span class="code-string">'/api/hello'</span>, (req, res) => {
+  res.<span class="code-function">json</span>({
+    message: <span class="code-string">'Hello, World!'</span>,
+    timestamp: <span class="code-keyword">new</span> <span class="code-function">Date</span>().<span class="code-function">toISOString</span>(),
+    status: <span class="code-string">'success'</span>
+  });
+});
+
+<span class="code-comment">// Start the server</span>
+app.<span class="code-function">listen</span>(PORT, () => {
+  console.<span class="code-function">log</span>(<span class="code-template">`Server running on port ${PORT}`</span>);
+});</code></pre>
+                    </div>
+                </div>
+                <div class="code-features">
+                    <div class="code-feature">
+                        <div class="code-feature-icon">✨</div>
+                        <div class="code-feature-content">
+                            <h4>Syntax Highlighting</h4>
+                            <p>Beautiful, accurate syntax highlighting for all major languages</p>
+                        </div>
+                    </div>
+                    <div class="code-feature">
+                        <div class="code-feature-icon">🔍</div>
+                        <div class="code-feature-content">
+                            <h4>IntelliSense</h4>
+                            <p>Smart code completion and inline documentation</p>
+                        </div>
+                    </div>
+                    <div class="code-feature">
+                        <div class="code-feature-icon">🐛</div>
+                        <div class="code-feature-content">
+                            <h4>Debugging Tools</h4>
+                            <p>Powerful debugging with breakpoints and variable inspection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Built for Developers, by Developers</h2>
+                    <p class="about-description">
+                        CodeCraft was created with a simple mission: make coding more enjoyable and productive. 
+                        We believe that great tools should get out of your way and let you focus on what matters most—building amazing things.
+                    </p>
+                    <p class="about-description">
+                        Our platform combines cutting-edge technology with thoughtful design to create an experience 
+                        that feels natural and empowering. Whether you're a beginner learning your first language or 
+                        a seasoned developer shipping production code, CodeCraft adapts to your needs.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <span class="highlight-number">5+</span>
+                            <span class="highlight-text">Years of Development</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">100+</span>
+                            <span class="highlight-text">Languages Supported</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-card">
+                        <div class="visual-content">
+                            <div class="code-snippet">
+                                <div class="snippet-line"><span class="code-keyword">function</span> <span class="code-function">createAmazing</span>() {</div>
+                                <div class="snippet-line">  <span class="code-keyword">return</span> <span class="code-string">'possibilities'</span>;</div>
+                                <div class="snippet-line">}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Building?</h2>
+                <p class="cta-subtitle">Join thousands of developers who are already creating amazing projects with CodeCraft</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="#" class="btn btn-outline btn-large">View Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">CodeCraft</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p class="footer-description">
+                        Building the future of development, one line at a time.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#code">Code Editor</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeCraft. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
